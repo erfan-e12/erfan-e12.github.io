@@ -406,6 +406,25 @@ nav {
   font-style: italic;
 }
 
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.25rem 2.5rem;
+}
+
+.skill-group { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.skill-group-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+
 .skills-grid { display: flex; flex-wrap: wrap; gap: 0.55rem; }
 
 .skill-chip {
@@ -611,19 +630,45 @@ footer {
 <div class="section-wrap" id="skills">
   <p class="section-label reveal">Skills</p>
   <h2 class="section-title reveal d1">What I work with</h2>
-  <div class="skills-grid reveal d2">
-    <span class="skill-chip">Python</span>
-    <span class="skill-chip">Machine Learning</span>
-    <span class="skill-chip">LangChain</span>
-    <span class="skill-chip">Agentic AI</span>
-    <span class="skill-chip">CrewAI</span>
-    <span class="skill-chip">Next.js</span>
-    <span class="skill-chip">React</span>
-    <span class="skill-chip">Node.js</span>
-    <span class="skill-chip">Full Stack Dev</span>
-    <span class="skill-chip">SEO</span>
-    <span class="skill-chip">Digital Marketing</span>
-    <span class="skill-chip">Git</span>
+  <div class="skill-groups">
+    <div class="skill-group reveal d2">
+      <h3 class="skill-group-title">AI &amp; Machine Learning</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">Machine Learning</span>
+        <span class="skill-chip">LangChain</span>
+        <span class="skill-chip">CrewAI</span>
+        <span class="skill-chip">Agentic AI</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d2">
+      <h3 class="skill-group-title">Frontend</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">TypeScript</span>
+        <span class="skill-chip">React</span>
+        <span class="skill-chip">Next.js</span>
+        <span class="skill-chip">Tailwind CSS</span>
+        <span class="skill-chip">HTML/CSS</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d3">
+      <h3 class="skill-group-title">Backend</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">NestJS</span>
+        <span class="skill-chip">Node.js</span>
+        <span class="skill-chip">REST APIs</span>
+        <span class="skill-chip">PostgreSQL</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d3">
+      <h3 class="skill-group-title">Tools &amp; Growth</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">Docker</span>
+        <span class="skill-chip">Git</span>
+        <span class="skill-chip">SEO</span>
+        <span class="skill-chip">Digital Marketing</span>
+      </div>
+    </div>
   </div>
 </div>
 
