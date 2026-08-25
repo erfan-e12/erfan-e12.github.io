@@ -406,6 +406,95 @@ nav {
   font-style: italic;
 }
 
+/* EXPERIENCE */
+.timeline { display: flex; flex-direction: column; gap: 2.5rem; }
+
+.job { display: grid; grid-template-columns: 20px 1fr; gap: 1.4rem; position: relative; }
+
+.job-marker {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  margin-top: 0.45rem;
+  position: relative;
+  z-index: 2;
+  justify-self: center;
+}
+
+.job:not(:last-child) .job-marker::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: calc(100% + 3.2rem);
+  background: var(--border);
+}
+
+.job-body { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+
+.job-top {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 0.5rem 1rem;
+}
+
+.job-role {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+  color: var(--text-1);
+}
+
+.job-dates {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.job-org {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.job-intro {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-top: 0.25rem;
+}
+
+.job-points {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0.42rem;
+  margin-top: 0.35rem;
+}
+
+.job-points li {
+  font-size: 0.89rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  padding-left: 1.05rem;
+  position: relative;
+}
+
+.job-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.62em;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+.job .project-tags { margin-top: 0.5rem; }
+
 .skill-groups {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -505,6 +594,7 @@ footer {
   <a href="#" class="nav-logo">EG</a>
   <ul class="nav-links">
     <li class="nav-desktop"><a href="#about">About</a></li>
+    <li class="nav-desktop"><a href="#experience">Experience</a></li>
     <li class="nav-desktop"><a href="#projects">Projects</a></li>
     <li class="nav-desktop"><a href="#skills">Skills</a></li>
     <li><a href="https://www.linkedin.com/in/erfan-gholizade-eg" target="_blank" rel="noopener" class="nav-cta">LinkedIn ↗</a></li>
@@ -524,12 +614,12 @@ footer {
       <span class="accent-line">Gholizade</span>
     </h1>
     <p class="hero-desc">
-      Computer Engineering student building intelligent systems — from agentic AI pipelines to full-stack products that reach real users.
+      Computer Engineer &amp; AI Programmer. I build full-stack products end-to-end — most recently DeviceCare, which I founded and built from the backend up.
     </p>
     <div class="hero-chips">
-      <span class="chip">AI Developer</span>
-      <span class="chip">Full Stack</span>
-      <span class="chip">Agentic AI</span>
+      <span class="chip">Full-Stack Development</span>
+      <span class="chip">Artificial Intelligence</span>
+      <span class="chip">NestJS</span>
       <span class="chip">Tehran, Iran</span>
     </div>
     <div class="hero-actions">
@@ -548,13 +638,13 @@ footer {
   <div class="about-grid">
     <div class="about-text reveal d2">
       <p>
-        I'm a Computer Engineering undergraduate with a deep focus on artificial intelligence and full-stack development. My work sits at the intersection of intelligent systems and products that people actually use.
+        I'm a Computer Engineering undergraduate and a full-stack developer. I've been taking on client work independently since 2020, growing from early Java projects into full-stack and AI development.
       </p>
       <p>
-        I'm particularly drawn to the shift from "AI that answers" to "AI that acts" — building agentic systems with LangChain and CrewAI that can reason, plan, and execute complex tasks across multiple steps.
+        That path led to founding <strong>DeviceCare</strong> in 2025 — a product I built end-to-end: the NestJS backend, the Docker infrastructure, the technical SEO, and the brand itself. Owning every layer taught me more than any single role could.
       </p>
       <p>
-        When I'm not writing code, I share engineering perspectives on AI — separating genuine capability from hype, and thinking about what it means to build reliable systems in a world of rapidly changing tools.
+        I also write about AI engineering on LinkedIn — mostly about separating real capability from hype, and what it takes to build reliable systems when the tooling changes every month.
       </p>
     </div>
     <div class="info-card reveal d3">
@@ -575,8 +665,15 @@ footer {
       <div class="info-row">
         <div class="info-icon">⚡</div>
         <div>
-          <span class="info-label">AI + Full Stack</span>
-          <span class="info-sub">End-to-end development</span>
+          <span class="info-label">Founder, DeviceCare</span>
+          <span class="info-sub">Full-stack, since Nov 2025</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">💼</div>
+        <div>
+          <span class="info-label">6+ years building</span>
+          <span class="info-sub">Independent since 2020</span>
         </div>
       </div>
       <div class="info-row">
@@ -599,6 +696,88 @@ footer {
 
 <div class="section-divider"></div>
 
+<!-- EXPERIENCE -->
+<div class="section-wrap" id="experience">
+  <p class="section-label reveal">Experience</p>
+  <h2 class="section-title reveal d1">Where I've worked</h2>
+  <div class="timeline">
+
+    <div class="job reveal d2">
+      <div class="job-marker"></div>
+      <div class="job-body">
+        <div class="job-top">
+          <h3 class="job-role">Founder &amp; Full-Stack Developer</h3>
+          <span class="job-dates">Nov 2025 — Present</span>
+        </div>
+        <p class="job-org">DeviceCare · Self-employed &nbsp;·&nbsp; Remote</p>
+        <p class="job-intro">
+          DeviceCare is a product I founded and built end-to-end: the brand, the platform, and the growth engine behind it.
+        </p>
+        <ul class="job-points">
+          <li>Architected and developed the entire backend from scratch with NestJS and Node.js</li>
+          <li>Containerised the full stack with Docker, making deployments reproducible across environments</li>
+          <li>Own technical SEO end-to-end: site architecture, page speed, metadata, and content strategy</li>
+          <li>Created the DeviceCare brand from zero: naming, positioning, and identity</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">NestJS</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Docker</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">SEO</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job reveal d2">
+      <div class="job-marker"></div>
+      <div class="job-body">
+        <div class="job-top">
+          <h3 class="job-role">Full-Stack Developer</h3>
+          <span class="job-dates">Jul 2020 — Present</span>
+        </div>
+        <p class="job-org">Erfan Development · Self-employed &nbsp;·&nbsp; Remote</p>
+        <p class="job-intro">
+          My independent development practice, where I take on client work end-to-end.
+        </p>
+        <ul class="job-points">
+          <li>Design and build web applications for clients, handling both the interface and the backend</li>
+          <li>Work directly with clients from scoping through delivery, with no project manager between us</li>
+          <li>Grew from early projects in Java into full-stack and AI work, which led to founding DeviceCare</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Full-Stack Development</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job reveal d3">
+      <div class="job-marker"></div>
+      <div class="job-body">
+        <div class="job-top">
+          <h3 class="job-role">AI and Web Developer</h3>
+          <span class="job-dates">Jan 2025 — Nov 2025</span>
+        </div>
+        <p class="job-org">Samar · Self-employed &nbsp;·&nbsp; Tehran, Iran · On-site</p>
+        <ul class="job-points">
+          <li>Built and maintained the training institute's website, covering layout, content structure, and ongoing updates</li>
+          <li>Developed internal web pages and tools to support day-to-day operations</li>
+          <li>Deepened my programming foundation alongside delivery work: web fundamentals, CSS, and C</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">CSS</span>
+          <span class="tag">HTML</span>
+          <span class="tag">C</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
 <!-- PROJECTS -->
 <div class="section-wrap" id="projects">
   <p class="section-label reveal">Projects</p>
@@ -613,12 +792,13 @@ footer {
         </div>
       </div>
       <p class="project-desc">
-        A platform connecting users with trusted device repair technicians. Built with a focus on seamless user experience and reliable service discovery across Iranian cities.
+        A platform I founded and built end-to-end — brand, product, and growth. The backend is NestJS and Node.js, architected from scratch and containerised with Docker.
       </p>
       <div class="project-tags">
-        <span class="tag">Next.js</span>
-        <span class="tag">Full Stack</span>
-        <span class="tag">Production</span>
+        <span class="tag">NestJS</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Docker</span>
+        <span class="tag">TypeScript</span>
       </div>
     </a>
   </div>
@@ -632,26 +812,6 @@ footer {
   <h2 class="section-title reveal d1">What I work with</h2>
   <div class="skill-groups">
     <div class="skill-group reveal d2">
-      <h3 class="skill-group-title">AI &amp; Machine Learning</h3>
-      <div class="skills-grid">
-        <span class="skill-chip">Python</span>
-        <span class="skill-chip">Machine Learning</span>
-        <span class="skill-chip">LangChain</span>
-        <span class="skill-chip">CrewAI</span>
-        <span class="skill-chip">Agentic AI</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d2">
-      <h3 class="skill-group-title">Frontend</h3>
-      <div class="skills-grid">
-        <span class="skill-chip">TypeScript</span>
-        <span class="skill-chip">React</span>
-        <span class="skill-chip">Next.js</span>
-        <span class="skill-chip">Tailwind CSS</span>
-        <span class="skill-chip">HTML/CSS</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d3">
       <h3 class="skill-group-title">Backend</h3>
       <div class="skills-grid">
         <span class="skill-chip">NestJS</span>
@@ -660,13 +820,31 @@ footer {
         <span class="skill-chip">PostgreSQL</span>
       </div>
     </div>
+    <div class="skill-group reveal d2">
+      <h3 class="skill-group-title">Frontend</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">TypeScript</span>
+        <span class="skill-chip">HTML/CSS</span>
+        <span class="skill-chip">Tailwind CSS</span>
+        <span class="skill-chip">Web Development</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d3">
+      <h3 class="skill-group-title">AI &amp; Machine Learning</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">Artificial Intelligence</span>
+        <span class="skill-chip">Machine Learning</span>
+        <span class="skill-chip">Python</span>
+      </div>
+    </div>
     <div class="skill-group reveal d3">
       <h3 class="skill-group-title">Tools &amp; Growth</h3>
       <div class="skills-grid">
         <span class="skill-chip">Docker</span>
         <span class="skill-chip">Git</span>
         <span class="skill-chip">SEO</span>
-        <span class="skill-chip">Digital Marketing</span>
+        <span class="skill-chip">Java</span>
+        <span class="skill-chip">C</span>
       </div>
     </div>
   </div>
